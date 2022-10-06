@@ -25,7 +25,7 @@ int main()
             iterator++;
         if (line[iterator] == '/' && line[iterator + 1] == '/')
             counter++;
-        // I could also use strstr(), which would end up looking prettier. Also, this way doesn't handle '///' well.. =P
+        // I could also use strstr(), which would end up looking prettier.
     }
     printf("The amount of line-comments in the file is: %d\n\n", counter);
     fclose(fp);

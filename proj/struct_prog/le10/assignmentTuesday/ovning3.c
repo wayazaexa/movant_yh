@@ -13,6 +13,7 @@ int main()
     char filename[30];
     char line[50];
     int amount = 0;
+    double new;
     double sum = 0;
     double max = DBL_MIN;
 
@@ -24,13 +25,15 @@ int main()
     // This loops over the lines in the file.
     while (fgets(line, 50, fp))
     {
+        // Convert the string to a double
+        new = atof(line);
         // Update the max if the newly read value is higher than the previously stored value.
-        if (atof(line) > max)
+        if (new > max)
         {
-            max = atof(line);
+            max = new;
         }
         // Add the newly read value to the total sum and increment the amount of values that have been read.
-        sum += atof(line);
+        sum += new;
         amount++;
     }
 
