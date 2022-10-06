@@ -27,6 +27,6 @@ int main()
 
     // Close the file to prevent memory leaks.
     fclose(fp);
-    // Exit cleanly like a good boy.
+    // Exit cleanly like a good boy.    This file contains 8 line-comments.
     return 0;
 }

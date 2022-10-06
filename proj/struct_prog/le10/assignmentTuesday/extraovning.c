@@ -3,38 +3,27 @@ Skriv ett program som läser en textfil och som skriver ut textfilens innehåll 
 Vid utskriften skall alla (TABS) tabulatortecken ersättas med tre mellanslag.
 */
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
 
 int main()
 {
     char filename[30];
-    char line[200];
+    char ch;
     int iterator;
 
-    printf("Enter the name of a C-program: ");
+    printf("Enter the name of a text file: ");
     scanf("%s", filename);
     FILE *fp = fopen(filename, "r");
 
-    // This loops over every line in the file fp points to.
-    while (fgets(line, 200, fp) != NULL)
+    // This loops over every character in the file fp points to.
+    while ((ch = fgetc(fp)) != EOF)
     {
-        iterator = 0;
-        // This loops until the end of the line.
-        while (line[iterator] != '\0')
-        {
             // If we find a tab, replace it with three spaces, otherwise print the character.
-            if (line[iterator] == '\t')
-            {
+            if (ch == '\t')
                 printf("   ");
-            }
-            else{
-                putc(line[iterator], stdout);
-            }
-            iterator++;
-        }
+            else
+                printf("%c", ch);
     }
-    
+
     fclose(fp);
     return 0;
 }

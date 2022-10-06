@@ -6,6 +6,7 @@ Tips: Standardfunktionen strstr kan vara användbar.
 */
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 int main()
 {
@@ -16,17 +17,13 @@ int main()
     scanf("%s", filename);
     FILE *fp = fopen(filename, "r");
     int counter = 0;
-    int iterator;
 
     while (fgets(line, 200, fp) != NULL)
     {
-        iterator = 0;
-        while (isspace(line[iterator]))
-            iterator++;
-        if (line[iterator] == '/' && line[iterator + 1] == '/')
+        if (strstr(line, "//"))
             counter++;
-        // I could also use strstr(), which would end up looking prettier.
     }
+
     printf("The amount of line-comments in the file is: %d\n\n", counter);
     fclose(fp);
     return 0;
