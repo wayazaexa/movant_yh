@@ -33,16 +33,14 @@ This function reverses a string using two iterators, a temporary variable, and a
 */
 void flipString(char *src)
 {
-    int size = strlen(src);
     // forwardIt points to the start of the string.
     char *forwardIt = src;
     // reverseIt points to the end of the string.
-    char *reverseIt = src + size - 1;
+    char *reverseIt = src + strlen(src) - 1;
     // This will hold a value while we swap.
     char temp;
-
-    // We iterate over half the length of the string as that's all we need.
-    for (int i = 0; i < size / 2; i++)
+    
+    while (forwardIt < reverseIt)
     {
         // Here we swap the value that the two iterators points to while also incrementing and decrementing the iterators respectively.
         temp = *reverseIt;
@@ -51,7 +49,18 @@ void flipString(char *src)
     }
     
     /*
-    // This was my first attempt, using one extra pointer as iterator (as I interpreted the pointer to the string as the second pointer),
+    // This was my second attempt, using an integer to store the length of the string.
+    // We iterate over half the length of the string as that's all we need.
+    for (int i = 0; i < size / 2; i++)
+    {
+        // Here we swap the value that the two iterators points to while also incrementing and decrementing the iterators respectively.
+        temp = *reverseIt;
+        *reverseIt-- = *forwardIt;
+        *forwardIt++ = temp;
+    }
+    */
+    /*
+    // This was my first attempt, using only one extra pointer as iterator (as I interpreted the pointer to the string as the second pointer),
     // plus some pointer arithmetic. This isn't as readable though, so I realised that you probably wanted us to use two iterators.
     // I still wanted to show it as I think pointer arithmetics are essential to the use of pointers.
     // One temporary variable to hold the value while we swap will still have to be used unless I've missed something.
