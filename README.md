@@ -1,2 +1,2 @@
-# movant_yh
-Every piece of code written while studying at Movant
+# Movant YH
+Most pieces of code written while studying at Movant.
