@@ -1,5 +1,3 @@
-# Movant YH - C/C++
+# Movant YH - projects
 
-This repository contains the code written during the first half of the C/C++ course at Movant.
-
-It was originally intended to contian most if not all pieces of code written while studying at Movant, thus the now obsolete folder structure.
+This repository contains all of the code written while studying at Movant that doesn't have its own repo.
